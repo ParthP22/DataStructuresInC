@@ -14,11 +14,13 @@ struct ArrayList{
 
 
 ArrayList* arrlist_init(void);
-bool arrlist_add(ArrayList*,int,int);
+bool arrlist_add(ArrayList*,int);
+bool arrlist_insert(ArrayList*,int,int);
 int arrlist_remove(ArrayList*,int);
 int arrlist_get(ArrayList*,int);
-bool arrlist_set(ArrayList*,int,int);
-void to_string(ArrayList*);
-
+int arrlist_set(ArrayList*,int,int);
+int arrlist_size(ArrayList*);
+bool is_arrlist_empty(ArrayList*);
+void arrlist_to_string(ArrayList*);
 
 #endif
