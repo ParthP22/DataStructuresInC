@@ -20,7 +20,7 @@ int arrlist_remove(ArrayList*,int);
 int arrlist_get(ArrayList*,int);
 int arrlist_set(ArrayList*,int,int);
 int arrlist_size(ArrayList*);
-bool is_arrlist_empty(ArrayList*);
+bool arrlist_is_empty(ArrayList*);
 void arrlist_to_string(ArrayList*);
 
 #endif

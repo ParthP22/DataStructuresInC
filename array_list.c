@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 ArrayList* arrlist_init(){
-    ArrayList* arr_list = malloc(sizeof(ArrayList*));
-    arr_list->arr = malloc(sizeof(int*)*DEFAULT_CAP);
+    ArrayList* arr_list = (ArrayList*)malloc(sizeof(ArrayList));
+    arr_list->arr = (int*)malloc(sizeof(int*)*DEFAULT_CAP);
     arr_list->capacity = DEFAULT_CAP;
     arr_list->size = 0;
     return arr_list;
@@ -108,7 +108,7 @@ int arrlist_size(ArrayList* arr_list){
     }
 }
 
-bool is_arrlist_empty(ArrayList* arr_list){
+bool arrlist_is_empty(ArrayList* arr_list){
     if(arr_list == NULL){
         printf("\nYour ArrayList is null");
         return true;
