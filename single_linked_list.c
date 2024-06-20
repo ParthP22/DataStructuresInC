@@ -1,5 +1,5 @@
 #include "single_linked_list.h"
-#include <stdio.h>
+
 
 SingleLinkedList* sll_init(){
     SingleLinkedList* sll = (SingleLinkedList*)malloc(sizeof(SingleLinkedList));
@@ -27,15 +27,16 @@ bool sll_add_first(SingleLinkedList* sll, int num){
     }
 }
 
-bool sll_remove_first(SingleLinkedList* sll){
+int sll_remove_first(SingleLinkedList* sll){
     if(sll == NULL){
-        return false;
+        return 1/0;
     }
     else if(sll->head == NULL){
-        return false;
+        return 1/0;
     }
     else{
         SingleListNode* tmp = sll->head;
+        int removed = tmp->val;
         sll->head = sll->head->next;
         free(tmp);
         return true;
@@ -58,10 +59,10 @@ bool sll_is_empty(SingleLinkedList* sll){
 void sll_to_string(SingleLinkedList* sll){
    SingleListNode* tmp = sll->head;
    printf("[");
-    while(tmp != (SingleListNode*)NULL){
+    while(tmp->next != (SingleListNode*)NULL){
         printf("%d, ", tmp->val);
         tmp = tmp->next;
     }
-    printf("]");
+    printf("%d]", tmp->val);
 }
 

@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include "array_list.h"
 #include "single_linked_list.h"
+#include "double_linked_list.h"
 
 int main(int argc, char** argv){
     // ArrayList* arr_list = arrlist_init();
@@ -19,15 +20,22 @@ int main(int argc, char** argv){
     SingleLinkedList* sll = sll_init();
     // sll_add_first(sll,1);
     // printf("%d", sll->head->val);
+    // for(int i = 0; i < 10; i++){
+    //     sll_add_first(sll,i+1);
+    // } 
+
+    // // for(int i = 0; i < 9; i++){
+    // //     sll_remove_first(sll);
+    // // }
+
+    // sll_to_string(sll);
+
+    DoubleLinkedList* dll = dll_init();
+
     for(int i = 0; i < 10; i++){
-        sll_add_first(sll,i+1);
-    } 
-
-    for(int i = 0; i < 9; i++){
-        sll_remove_first(sll);
+        dll_add_last(dll,i+1);
     }
-
-    sll_to_string(sll);
+    dll_to_string(dll);
 
     return 0;
 }
