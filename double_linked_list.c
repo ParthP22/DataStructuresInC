@@ -5,6 +5,7 @@ DoubleLinkedList* dll_init(){
     DoubleLinkedList* dll = (DoubleLinkedList*)malloc(sizeof(DoubleLinkedList));
     dll->head = NULL;
     dll->tail = NULL;
+    return dll;
 }
 
 bool dll_add_first(DoubleLinkedList* dll, int num){

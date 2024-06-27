@@ -1,6 +1,6 @@
 #include "array_list.h"
 #include "reallocate.h"
-#include <stdio.h>
+
 
 ArrayList* arrlist_init(){
     ArrayList* arr_list = (ArrayList*)malloc(sizeof(ArrayList));
@@ -123,8 +123,8 @@ bool arrlist_is_empty(ArrayList* arr_list){
 
 void arrlist_to_string(ArrayList* arr_list){
     printf("\n[");
-    for(int i = 0; i < arr_list->size; i++){
+    for(int i = 0; i < arr_list->size - 1; i++){
         printf("%d, ", arr_list->arr[i]);
     }
-    printf("]");
+    printf("%d]", arr_list->size - 1);
 }
