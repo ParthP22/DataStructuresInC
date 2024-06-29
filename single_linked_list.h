@@ -20,7 +20,9 @@ struct SingleLinkedList{
 SingleLinkedList* sll_init();
 bool sll_add_first(SingleLinkedList*,int);
 int sll_remove_first(SingleLinkedList*);
+int sll_get_first(SingleLinkedList*);
 bool sll_is_empty(SingleLinkedList*);
 void sll_to_string(SingleLinkedList*);
+
 
 #endif

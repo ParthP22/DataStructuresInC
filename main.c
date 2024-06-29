@@ -4,6 +4,7 @@
 #include "single_linked_list.h"
 #include "double_linked_list.h"
 #include "array_stack.h"
+#include "linked_list_stack.h"
 
 int main(int argc, char** argv){
     // ArrayList* arr_list = arrlist_init();
@@ -38,20 +39,20 @@ int main(int argc, char** argv){
     // }
     // dll_to_string(dll);
 
-    ArrayStack* arr_stack = arrstack_init();
-    printf("\n%s", arrstack_is_empty(arr_stack) ? "true" : "false");
+    LinkedListStack* ll_stack = llstack_init();
+    printf("\n%s", llstack_is_empty(ll_stack) ? "true" : "false");
 
     for(int i = 0; i < 10; i++){
-        arrstack_push(arr_stack,i);
+        llstack_push(ll_stack,i);
     }
-    arrstack_to_string(arr_stack);
+    llstack_to_string(ll_stack);
     
     for(int i = 0; i < 4; i++){
-        arrstack_pop(arr_stack);
+        llstack_pop(ll_stack);
     }
-    arrstack_to_string(arr_stack);
-    printf("\n%s", arrstack_is_empty(arr_stack) ? "true" : "false");
-    printf("\n%d", arrstack_peek(arr_stack));
+    llstack_to_string(ll_stack);
+    printf("\n%s", llstack_is_empty(ll_stack) ? "true" : "false");
+    printf("\n%d", llstack_peek(ll_stack));
 
     return 0;
 }

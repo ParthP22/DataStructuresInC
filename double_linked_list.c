@@ -84,6 +84,29 @@ int dll_remove_last(DoubleLinkedList* dll){
     }
 }
 
+int dll_get_first(DoubleLinkedList* dll){
+    if(dll == NULL){
+        return 1/0;
+    }
+    else if(dll->head == NULL){
+        return 1/0;
+    }
+    else{
+        return dll->head->val;
+    }
+}
+int dll_get_last(DoubleLinkedList* dll){
+    if(dll == NULL){
+        return 1/0;
+    }
+    else if(dll->tail == NULL){
+        return 1/0;
+    }
+    else{
+        return dll->tail->val;
+    }
+}
+
 bool dll_is_empty(DoubleLinkedList* dll){
     if(dll == NULL){
         return true;

@@ -43,6 +43,18 @@ int sll_remove_first(SingleLinkedList* sll){
     }
 }
 
+int sll_get_first(SingleLinkedList* sll){
+    if(sll == NULL){
+        return 1/0;
+    }
+    else if(sll->head == NULL){
+        return 1/0;
+    }
+    else{
+        return sll->head->val;
+    }
+}
+
 bool sll_is_empty(SingleLinkedList* sll){
     if(sll == NULL){
         printf("\nYour SingleLinkedList is null");
@@ -58,7 +70,7 @@ bool sll_is_empty(SingleLinkedList* sll){
 
 void sll_to_string(SingleLinkedList* sll){
    SingleListNode* tmp = sll->head;
-   printf("[");
+   printf("\n[");
     while(tmp->next != (SingleListNode*)NULL){
         printf("%d, ", tmp->val);
         tmp = tmp->next;

@@ -51,7 +51,7 @@ bool arrstack_is_empty(ArrayStack* arr_stack){
         return true;
     }
     else{
-        return arrlist_is_empty(arr_stack->stack);;
+        return arrlist_is_empty(arr_stack->stack);
     }
 }
 
