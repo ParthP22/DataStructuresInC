@@ -7,17 +7,17 @@
 #include "linked_list_stack.h"
 
 int main(int argc, char** argv){
-    // ArrayList* arr_list = arrlist_init();
-    // arrlist_add(arr_list, 2);
-    // for(int i = 0; i < 20; i++){
-    //     arrlist_add(arr_list, i+1);
-    // }
-    // arrlist_to_string(arr_list);
-    // for(int i = 0; i < 10; i++){
-    //     arrlist_remove(arr_list, i);
-    // }
-    // arrlist_to_string(arr_list);
-    // printf("\nHello World");
+    ArrayList* arr_list = arrlist_init();
+    arrlist_add(arr_list, 2);
+    for(int i = 0; i < 1000; i++){
+        arrlist_add(arr_list, i+1);
+    }
+    arrlist_to_string(arr_list);
+    for(int i = 0; i < 10; i++){
+        arrlist_remove(arr_list, 0);
+    }
+    arrlist_to_string(arr_list);
+    printf("\nHello World");
 
     // SingleLinkedList* sll = sll_init();
     // sll_add_first(sll,1);
@@ -39,20 +39,20 @@ int main(int argc, char** argv){
     // }
     // dll_to_string(dll);
 
-    LinkedListStack* ll_stack = llstack_init();
-    printf("\n%s", llstack_is_empty(ll_stack) ? "true" : "false");
+    // LinkedListStack* ll_stack = llstack_init();
+    // printf("\n%s", llstack_is_empty(ll_stack) ? "true" : "false");
 
-    for(int i = 0; i < 10; i++){
-        llstack_push(ll_stack,i);
-    }
-    llstack_to_string(ll_stack);
+    // for(int i = 0; i < 10; i++){
+    //     llstack_push(ll_stack,i);
+    // }
+    // llstack_to_string(ll_stack);
     
-    for(int i = 0; i < 4; i++){
-        llstack_pop(ll_stack);
-    }
-    llstack_to_string(ll_stack);
-    printf("\n%s", llstack_is_empty(ll_stack) ? "true" : "false");
-    printf("\n%d", llstack_peek(ll_stack));
+    // for(int i = 0; i < 4; i++){
+    //     llstack_pop(ll_stack);
+    // }
+    // llstack_to_string(ll_stack);
+    // printf("\n%s", llstack_is_empty(ll_stack) ? "true" : "false");
+    // printf("\n%d", llstack_peek(ll_stack));
 
     return 0;
 }

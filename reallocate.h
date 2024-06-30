@@ -2,8 +2,10 @@
 #define REALLOCATE_H_
 
 #include "array_list.h"
+#include "array_queue.h"
+#include "array_deque.h"
 
-void reallocate(ArrayList*);
+int* reallocate(int*, int, int, int*);
 
 
 #endif
