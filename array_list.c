@@ -10,7 +10,7 @@ ArrayList* arrlist_init(){
 
 bool arrlist_add(ArrayList* arr_list, int num){
     if(arr_list == NULL){
-        printf("\nYour ArrayList is null");
+        printf("\nArrayList is null");
         return false;
     }
     else{
@@ -26,7 +26,7 @@ bool arrlist_add(ArrayList* arr_list, int num){
 
 bool arrlist_insert(ArrayList* arr_list, int index, int num){
     if(arr_list == NULL){
-        printf("\nYour ArrayList is null");
+        printf("\nArrayList is null");
         return false;
     }
     else if(index > arr_list->size || index < 0){
@@ -49,7 +49,7 @@ bool arrlist_insert(ArrayList* arr_list, int index, int num){
 
 int arrlist_remove(ArrayList* arr_list, int index){
     if(arr_list == NULL){
-        printf("\nYour ArrayList is null");
+        printf("\nArrayList is null");
         return index/0;
     }
     else if(index > arr_list->size - 1 || index < 0){
@@ -69,7 +69,7 @@ int arrlist_remove(ArrayList* arr_list, int index){
 
 int arrlist_get(ArrayList* arr_list, int index){
     if(arr_list == NULL){
-        printf("\nYour ArrayList is null");
+        printf("\nArrayList is null");
         return index/0;
     }
     else if(index >= arr_list->size || index < 0){
@@ -83,7 +83,7 @@ int arrlist_get(ArrayList* arr_list, int index){
 
 int arrlist_set(ArrayList* arr_list, int index, int num){
     if(arr_list == NULL){
-        printf("\nYour ArrayList is null");
+        printf("\nArrayList is null");
         return index/0;
     }
     else if(index > arr_list->size || index < 0){
@@ -99,7 +99,7 @@ int arrlist_set(ArrayList* arr_list, int index, int num){
 
 int arrlist_size(ArrayList* arr_list){
     if(arr_list == NULL){
-        printf("\nYour ArrayList is null");
+        printf("\nArrayList is null");
         return 1/0;
     }
     else{
@@ -109,7 +109,7 @@ int arrlist_size(ArrayList* arr_list){
 
 bool arrlist_is_empty(ArrayList* arr_list){
     if(arr_list == NULL){
-        printf("\nYour ArrayList is null");
+        printf("\nArrayList is null");
         return true;
     }
     else if(arr_list->size == 0){
@@ -121,6 +121,10 @@ bool arrlist_is_empty(ArrayList* arr_list){
 }
 
 void arrlist_to_string(ArrayList* arr_list){
+    if(arr_list == NULL){
+        printf("\nArrayList is null");
+        return;
+    }
     printf("\n[");
     for(int i = 0; i < arr_list->size - 1; i++){
         printf("%d, ", arr_list->arr[i]);

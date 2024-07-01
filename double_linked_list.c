@@ -11,6 +11,7 @@ DoubleLinkedList* dll_init(){
 
 bool dll_add_first(DoubleLinkedList* dll, int num){
     if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
         return false;
     }
     else if(dll->head == NULL){
@@ -34,6 +35,7 @@ bool dll_add_first(DoubleLinkedList* dll, int num){
 
 bool dll_add_last(DoubleLinkedList* dll, int num){
     if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
         return false;
     }
     else if(dll->tail == NULL){
@@ -57,9 +59,11 @@ bool dll_add_last(DoubleLinkedList* dll, int num){
 
 int dll_remove_first(DoubleLinkedList* dll){
     if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
         return 1/0;
     }
     else if(dll->head == NULL){
+        printf("\nDoubleLinkedList is empty");
         return 1/0;
     }
     else{
@@ -75,9 +79,11 @@ int dll_remove_first(DoubleLinkedList* dll){
 
 int dll_remove_last(DoubleLinkedList* dll){
     if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
         return 1/0;
     }
     else if(dll->tail == NULL){
+        printf("\nDoubleLinkedList is empty");
         return 1/0;
     }
     else{
@@ -93,9 +99,11 @@ int dll_remove_last(DoubleLinkedList* dll){
 
 int dll_get_first(DoubleLinkedList* dll){
     if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
         return 1/0;
     }
     else if(dll->head == NULL){
+        printf("\nDoubleLinkedList is empty");
         return 1/0;
     }
     else{
@@ -104,9 +112,11 @@ int dll_get_first(DoubleLinkedList* dll){
 }
 int dll_get_last(DoubleLinkedList* dll){
     if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
         return 1/0;
     }
     else if(dll->tail == NULL){
+        printf("\nDoubleLinkedList is empty");
         return 1/0;
     }
     else{
@@ -116,6 +126,7 @@ int dll_get_last(DoubleLinkedList* dll){
 
 bool dll_is_empty(DoubleLinkedList* dll){
     if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
         return true;
     }
     else if(dll->head == NULL){
@@ -127,6 +138,9 @@ bool dll_is_empty(DoubleLinkedList* dll){
 }
 
 void dll_to_string(DoubleLinkedList* dll){
+    if(dll == NULL){
+        printf("\nDoubleLinkedList is null");
+    }
     DoubleListNode* tmp = dll->head;
     printf("[");
     while(tmp->next != (DoubleListNode*)NULL){

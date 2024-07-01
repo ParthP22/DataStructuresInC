@@ -7,7 +7,7 @@ LinkedListStack* llstack_init(){
 }
 
 bool llstack_push(LinkedListStack* ll_stack, int num){
-    if(ll_stack->stack == NULL){
+    if(ll_stack == NULL){
         printf("\nYour LinkedListStack is null");
         return true;
     }
@@ -17,7 +17,7 @@ bool llstack_push(LinkedListStack* ll_stack, int num){
 }
 
 int llstack_pop(LinkedListStack* ll_stack){
-    if(ll_stack->stack == NULL){
+    if(ll_stack == NULL){
         printf("\nYour LinkedListStack is null");
         return 1/0;
     }
@@ -31,7 +31,7 @@ int llstack_pop(LinkedListStack* ll_stack){
 }
 
 int llstack_peek(LinkedListStack* ll_stack){
-    if(ll_stack->stack == NULL){
+    if(ll_stack == NULL){
         printf("\nYour LinkedListStack is null");
         return 1/0;
     }
@@ -45,7 +45,7 @@ int llstack_peek(LinkedListStack* ll_stack){
 }
 
 bool llstack_is_empty(LinkedListStack* ll_stack){
-    if(ll_stack->stack == NULL){
+    if(ll_stack == NULL){
         printf("\nYour LinkedListStack is null");
         return true;
     }
@@ -58,7 +58,7 @@ bool llstack_is_empty(LinkedListStack* ll_stack){
 
 }
 void llstack_to_string(LinkedListStack* ll_stack){
-    if(ll_stack->stack == NULL){
+    if(ll_stack == NULL){
         printf("\nYour LinkedListStack is null");
         return;
     }

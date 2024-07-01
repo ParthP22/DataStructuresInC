@@ -12,6 +12,7 @@ ArrayQueue* arrqueue_init(){
 
 bool arrqueue_offer(ArrayQueue* arr_queue, int num){
     if(arr_queue == NULL){
+        printf("\nArrayQueue is null");
         return false;
     }
     else{
@@ -27,9 +28,11 @@ bool arrqueue_offer(ArrayQueue* arr_queue, int num){
 
 int arrqueue_poll(ArrayQueue* arr_queue){
     if(arr_queue == NULL){
+        printf("\nArrayQueue is null");
         return 1/0;
     }
     else if(arr_queue->size == 0){
+        printf("\nArrayQueue is empty");
         return 1/0;
     }
     else{
@@ -42,9 +45,11 @@ int arrqueue_poll(ArrayQueue* arr_queue){
 
 int arrqueue_peek(ArrayQueue* arr_queue){
     if(arr_queue == NULL){
+        printf("\nArrayQueue is null");
         return 1/0;
     }
     else if(arr_queue->size == 0){
+        printf("\nArrayQueue is empty");
         return 1/0;
     }
     else{
@@ -54,6 +59,7 @@ int arrqueue_peek(ArrayQueue* arr_queue){
 
 bool arrqueue_is_empty(ArrayQueue* arr_queue){
     if(arr_queue == NULL){
+        printf("\nArrayQueue is null");
         return true;
     }
     else if(arr_queue->size == 0){
@@ -66,6 +72,7 @@ bool arrqueue_is_empty(ArrayQueue* arr_queue){
 
 void arrqueue_to_string(ArrayQueue* arr_queue){
     if(arr_queue == NULL){
+        printf("\nArrayQueue is null");
         return;
     }
     else{
