@@ -5,6 +5,7 @@ DoubleLinkedList* dll_init(){
     DoubleLinkedList* dll = (DoubleLinkedList*)malloc(sizeof(DoubleLinkedList));
     dll->head = NULL;
     dll->tail = NULL;
+    dll->size = 0;
     return dll;
 }
 
@@ -17,6 +18,7 @@ bool dll_add_first(DoubleLinkedList* dll, int num){
         dll->tail = dll->head;
         dll->head->val = num;
         dll->head->next = NULL;
+        dll->size++;
         return true;
     }
     else{
@@ -25,6 +27,7 @@ bool dll_add_first(DoubleLinkedList* dll, int num){
         dll->head->prev = tmp;
         tmp->val = num;
         dll->head = tmp;
+        dll->size++;
         return true;
     }
 }
@@ -38,6 +41,7 @@ bool dll_add_last(DoubleLinkedList* dll, int num){
         dll->head = dll->tail;
         dll->tail->val = num;
         dll->tail->next = NULL;
+        dll->size++;
         return true;
     }
     else{
@@ -46,6 +50,7 @@ bool dll_add_last(DoubleLinkedList* dll, int num){
         dll->tail->next = tmp;
         tmp->val = num;
         dll->tail = tmp;
+        dll->size++;
         return true;
     }
 }
@@ -62,6 +67,7 @@ int dll_remove_first(DoubleLinkedList* dll){
         int removed = tmp->val;
         dll->head = dll->head->next;
         dll->head->prev = NULL;
+        dll->size--;
         free(tmp);
         return true;
     }
@@ -79,6 +85,7 @@ int dll_remove_last(DoubleLinkedList* dll){
         int removed = tmp->val;
         dll->tail = dll->tail->prev;
         dll->tail->next = NULL;
+        dll->size--;
         free(tmp);
         return true;
     }

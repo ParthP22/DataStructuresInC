@@ -15,6 +15,7 @@ struct SingleListNode{
 
 struct SingleLinkedList{
     SingleListNode* head;
+    int size;
 };
 
 SingleLinkedList* sll_init();

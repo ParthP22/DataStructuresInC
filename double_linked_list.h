@@ -11,6 +11,7 @@ typedef struct DoubleListNode DoubleListNode;
 struct DoubleLinkedList{
     DoubleListNode* head;
     DoubleListNode* tail;
+    int size;
 };
 
 struct DoubleListNode{

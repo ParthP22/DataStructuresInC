@@ -4,7 +4,7 @@
 SingleLinkedList* sll_init(){
     SingleLinkedList* sll = (SingleLinkedList*)malloc(sizeof(SingleLinkedList));
     sll->head = NULL;
-
+    sll->size = 0;
     return sll;
 }
 
@@ -16,6 +16,7 @@ bool sll_add_first(SingleLinkedList* sll, int num){
         sll->head = (SingleListNode*)malloc(sizeof(SingleListNode));
         sll->head->next = NULL;
         sll->head->val = num;
+        sll->size++;
         return true;
     }
     else{
@@ -23,6 +24,7 @@ bool sll_add_first(SingleLinkedList* sll, int num){
         tmp->next = sll->head;
         tmp->val = num;
         sll->head = tmp;
+        sll->size++;
         return true;
     }
 }
@@ -38,6 +40,7 @@ int sll_remove_first(SingleLinkedList* sll){
         SingleListNode* tmp = sll->head;
         int removed = tmp->val;
         sll->head = sll->head->next;
+        sll->size--;
         free(tmp);
         return true;
     }
