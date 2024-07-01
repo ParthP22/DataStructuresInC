@@ -5,19 +5,20 @@
 #include "double_linked_list.h"
 #include "array_stack.h"
 #include "linked_list_stack.h"
+#include "array_queue.h"
 
 int main(int argc, char** argv){
-    ArrayList* arr_list = arrlist_init();
-    arrlist_add(arr_list, 2);
-    for(int i = 0; i < 1000; i++){
-        arrlist_add(arr_list, i+1);
-    }
-    arrlist_to_string(arr_list);
-    for(int i = 0; i < 10; i++){
-        arrlist_remove(arr_list, 0);
-    }
-    arrlist_to_string(arr_list);
-    printf("\nHello World");
+    // ArrayList* arr_list = arrlist_init();
+    // arrlist_add(arr_list, 2);
+    // for(int i = 0; i < 1000; i++){
+    //     arrlist_add(arr_list, i+1);
+    // }
+    // arrlist_to_string(arr_list);
+    // for(int i = 0; i < 10; i++){
+    //     arrlist_remove(arr_list, 0);
+    // }
+    // arrlist_to_string(arr_list);
+    // printf("\nHello World");
 
     // SingleLinkedList* sll = sll_init();
     // sll_add_first(sll,1);
@@ -53,6 +54,21 @@ int main(int argc, char** argv){
     // llstack_to_string(ll_stack);
     // printf("\n%s", llstack_is_empty(ll_stack) ? "true" : "false");
     // printf("\n%d", llstack_peek(ll_stack));
+
+    ArrayQueue* arr_queue = arrqueue_init();
+    printf("\n%s", arrqueue_is_empty(arr_queue) ? "true" : "false");
+
+    for(int i = 0; i < 1000; i++){
+        arrqueue_offer(arr_queue,i);
+    }
+
+    for(int i = 0; i < 100; i++){
+        arrqueue_poll(arr_queue);
+    }
+
+    arrqueue_to_string(arr_queue);
+    printf("\n%d", arrqueue_peek(arr_queue));
+    printf("\n%s", arrqueue_is_empty(arr_queue) ? "true" : "false");
 
     return 0;
 }
