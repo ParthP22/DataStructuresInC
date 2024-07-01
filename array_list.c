@@ -1,6 +1,4 @@
 #include "array_list.h"
-#include "reallocate.h"
-
 
 ArrayList* arrlist_init(){
     ArrayList* arr_list = (ArrayList*)malloc(sizeof(ArrayList));
