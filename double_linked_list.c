@@ -137,16 +137,30 @@ bool dll_is_empty(DoubleLinkedList* dll){
     }
 }
 
-void dll_to_string(DoubleLinkedList* dll){
+
+//If dir == true, then the dll is traversed forwards
+//Else, it is traversed backwards
+void dll_to_string(DoubleLinkedList* dll, bool dir){
     if(dll == NULL){
         printf("\nDoubleLinkedList is null");
     }
-    DoubleListNode* tmp = dll->head;
-    printf("[");
-    while(tmp->next != (DoubleListNode*)NULL){
-        printf("%d, ", tmp->val);
-        tmp = tmp->next;
+    if(dir){
+        DoubleListNode* tmp = dll->head;
+        printf("[");
+        while(tmp->next != (DoubleListNode*)NULL){
+            printf("%d, ", tmp->val);
+            tmp = tmp->next;
+        }
+        printf("%d]", tmp->val);
     }
-    printf("%d]", tmp->val);
+    else{
+        DoubleListNode* tmp = dll->tail;
+        printf("[");
+        while(tmp->prev != (DoubleListNode*)NULL){
+            printf("%d, ", tmp->val);
+            tmp = tmp->prev;
+        }
+        printf("%d]", tmp->val);
+    }
 }
 

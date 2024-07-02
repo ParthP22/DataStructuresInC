@@ -28,6 +28,6 @@ int dll_remove_last(DoubleLinkedList*);
 int dll_get_first(DoubleLinkedList*);
 int dll_get_last(DoubleLinkedList*);
 bool dll_is_empty(DoubleLinkedList*);
-void dll_to_string(DoubleLinkedList*);
+void dll_to_string(DoubleLinkedList*,bool);
 
 #endif

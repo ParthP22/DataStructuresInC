@@ -64,7 +64,7 @@ void llqueue_to_string(LinkedListQueue* ll_queue){
         return;
     }
     else{
-        dll_to_string(ll_queue->queue);
+        dll_to_string(ll_queue->queue,false);
     }
 
 }
