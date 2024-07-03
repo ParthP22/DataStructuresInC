@@ -7,6 +7,7 @@
 #include "linked_list_stack.h"
 #include "array_queue.h"
 #include "linked_list_queue.h"
+#include "array_heap.h"
 
 int main(int argc, char** argv){
     // ArrayList* arr_list = arrlist_init();
@@ -75,24 +76,36 @@ int main(int argc, char** argv){
     // printf("\n%d", arrqueue_peek(arr_queue));
     // printf("\n%s", arrqueue_is_empty(arr_queue) ? "true" : "false");
 
-    LinkedListQueue* ll_queue = llqueue_init();
-    printf("\n%s", llqueue_is_empty(ll_queue) ? "true" : "false");
+    // LinkedListQueue* ll_queue = llqueue_init();
+    // printf("\n%s", llqueue_is_empty(ll_queue) ? "true" : "false");
 
-    for(int i = 0; i < 1000; i++){
-        llqueue_offer(ll_queue,i);
+    // for(int i = 0; i < 1000; i++){
+    //     llqueue_offer(ll_queue,i);
+    // }
+
+    // for(int i = 0; i < 100; i++){
+    //     llqueue_poll(ll_queue);
+    // }
+
+    // for(int i = 200; i < 300; i++){
+    //     llqueue_offer(ll_queue,i);
+    // }
+
+    // llqueue_to_string(ll_queue);
+    // printf("\n%d", llqueue_peek(ll_queue));
+    // printf("\n%s", llqueue_is_empty(ll_queue) ? "true" : "false");
+
+    ArrayHeap* arr_heap = arrheap_init();
+
+    for(int i = 2; i <= 5; i++){
+        arrheap_insert(arr_heap,i * 2);
     }
 
-    for(int i = 0; i < 100; i++){
-        llqueue_poll(ll_queue);
+    for(int i = 7; i < 10; i++){
+        arrheap_insert(arr_heap,i);
     }
-
-    for(int i = 200; i < 300; i++){
-        llqueue_offer(ll_queue,i);
-    }
-
-    llqueue_to_string(ll_queue);
-    printf("\n%d", llqueue_peek(ll_queue));
-    printf("\n%s", llqueue_is_empty(ll_queue) ? "true" : "false");
+    arrheap_insert(arr_heap,1);
+    arrheap_to_string(arr_heap);
 
     return 0;
 }
