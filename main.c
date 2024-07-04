@@ -97,17 +97,19 @@ int main(int argc, char** argv){
 
     ArrayHeap* arr_heap = arrheap_init();
 
+    for(int i = 7; i < 10; i++){
+        arrheap_insert(arr_heap,i);
+    }
     for(int i = 2; i <= 5; i++){
         arrheap_insert(arr_heap,i * 2);
     }
 
-    for(int i = 7; i < 10; i++){
-        arrheap_insert(arr_heap,i);
-    }
+    
     arrheap_insert(arr_heap,1);
     arrheap_to_string(arr_heap);
 
     arrheap_heap_sort(arr_heap);
+    printf("\nHeapSorted: ");
     arrheap_to_string(arr_heap);
 
     arrheap_remove(arr_heap,6);

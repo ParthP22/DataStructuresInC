@@ -12,7 +12,7 @@ int arrheap_parent(ArrayHeap* arr_heap, int index){
     if(index > 0 && index < arr_heap->size){
         return (index - 1) / 2;
     }
-    printf("No parent found");
+    // printf("No parent found");
     return -1;
 }
 
@@ -21,7 +21,7 @@ int arrheap_left_child(ArrayHeap* arr_heap, int index){
         return index * 2 + 1;
     }
     else{
-        printf("No left child found");
+        // printf("No left child found");
         return -1;
     }
 }
@@ -31,7 +31,7 @@ int arrheap_right_child(ArrayHeap* arr_heap, int index){
         return index * 2 + 2;
     }
     else{
-        printf("No right child found");
+        // printf("No right child found");
         return -1;
     }
 
@@ -248,11 +248,23 @@ int arrheap_extract_root(ArrayHeap* arr_heap){
     return root;
 }
 
+void arrheap_build_heap(ArrayHeap* arr_heap){
+    for(int i = floor((arr_heap->size - 1) / 2); i >= 0; i--){
+        arrheap_heapify(arr_heap,i);
+    }
+}
+
 void arrheap_heap_sort(ArrayHeap* arr_heap){
+    arrheap_build_heap(arr_heap);
+    int* sorted = (int*)malloc(sizeof(int) * arr_heap->capacity);
     int size = arr_heap->size;
     for(int i = 0; i < size; i++){
-        arr_heap->heap[i] = arrheap_extract_root(arr_heap);
+        sorted[i] = arrheap_extract_root(arr_heap);
     }
+    free(arr_heap->heap);
+    arr_heap->heap = sorted;
+    arr_heap->size = size;
+
     return;
 }
 
