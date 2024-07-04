@@ -107,5 +107,14 @@ int main(int argc, char** argv){
     arrheap_insert(arr_heap,1);
     arrheap_to_string(arr_heap);
 
+    arrheap_heap_sort(arr_heap);
+    arrheap_to_string(arr_heap);
+
+    arrheap_remove(arr_heap,6);
+    arrheap_to_string(arr_heap);
+
+    arrheap_remove(arr_heap,5);
+    arrheap_to_string(arr_heap);
+
     return 0;
 }
