@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "array_list.h": "c",
+        "stdio.h": "c",
+        "array_stack.h": "c",
+        "linked_list_stack.h": "c",
+        "stdlib.h": "c",
+        "single_linked_list.h": "c",
+        "reallocate.h": "c",
+        "array_heap.h": "c"
+    }
+}
