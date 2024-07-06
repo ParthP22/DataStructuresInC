@@ -8,6 +8,7 @@
 #include "array_queue.h"
 #include "linked_list_queue.h"
 #include "array_heap.h"
+#include "disjoint_set.h"
 
 int main(int argc, char** argv){
     // ArrayList* arr_list = arrlist_init();
@@ -95,28 +96,37 @@ int main(int argc, char** argv){
     // printf("\n%d", llqueue_peek(ll_queue));
     // printf("\n%s", llqueue_is_empty(ll_queue) ? "true" : "false");
 
-    ArrayHeap* arr_heap = arrheap_init();
+    // ArrayHeap* arr_heap = arrheap_init();
 
-    for(int i = 7; i < 10; i++){
-        arrheap_insert(arr_heap,i);
-    }
-    for(int i = 2; i <= 5; i++){
-        arrheap_insert(arr_heap,i * 2);
-    }
+    // for(int i = 7; i < 10; i++){
+    //     arrheap_insert(arr_heap,i);
+    // }
+    // for(int i = 2; i <= 5; i++){
+    //     arrheap_insert(arr_heap,i * 2);
+    // }
 
     
-    arrheap_insert(arr_heap,1);
-    arrheap_to_string(arr_heap);
+    // arrheap_insert(arr_heap,1);
+    // arrheap_to_string(arr_heap);
 
-    arrheap_heap_sort(arr_heap);
-    printf("\nHeapSorted: ");
-    arrheap_to_string(arr_heap);
+    // arrheap_heap_sort(arr_heap);
+    // printf("\nHeapSorted: ");
+    // arrheap_to_string(arr_heap);
 
-    arrheap_remove(arr_heap,6);
-    arrheap_to_string(arr_heap);
+    // arrheap_remove(arr_heap,6);
+    // arrheap_to_string(arr_heap);
 
-    arrheap_remove(arr_heap,5);
-    arrheap_to_string(arr_heap);
+    // arrheap_remove(arr_heap,5);
+    // arrheap_to_string(arr_heap);
+
+    DisjointSet* djs = djs_init(5);
+    djs_union(djs, 0, 1);
+    djs_union(djs, 2, 3);
+    djs_union(djs, 1, 3);
+
+    for(int i = 0; i < 5; i++){
+        printf("\nElement %d belongs to the set with representative %d", i, djs_find_representative(djs, i));
+    }
 
     return 0;
 }

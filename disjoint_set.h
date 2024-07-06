@@ -9,10 +9,12 @@ typedef struct DisjointSet DisjointSet;
 
 struct DisjointSet{
     int* representatives;
+    int* rank;
 };
 
-DisjointSet* djs_init();
-int djs_find_representative(DisjointSet*);
-bool djs_union(DisjointSet*);
+DisjointSet* djs_init(int);
+int djs_find_representative(DisjointSet*,int);
+bool djs_union(DisjointSet*,int,int);
+
 
 #endif
