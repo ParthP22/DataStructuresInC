@@ -119,14 +119,14 @@ int main(int argc, char** argv){
     // arrheap_remove(arr_heap,5);
     // arrheap_to_string(arr_heap);
 
-    DisjointSet* djs = djs_init(5);
+    DisjointSet* djs = NULL;
     djs_union(djs, 0, 1);
-    djs_union(djs, 2, 3);
-    djs_union(djs, 1, 3);
+    // djs_union(djs, 2, 3);
+    // djs_union(djs, 1, 3);
 
-    for(int i = 0; i < 5; i++){
-        printf("\nElement %d belongs to the set with representative %d", i, djs_find_representative(djs, i));
-    }
+    // for(int i = 0; i < 5; i++){
+    //     printf("\nElement %d belongs to the set with representative %d", i, djs_find_representative(djs, i));
+    // }
 
     return 0;
 }

@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <assert.h>
+#define LOG_DEBUG(TEXT) log_debug(__FILE__, __LINE__, TEXT)
 
 typedef struct DisjointSet DisjointSet;
 

@@ -1,5 +1,10 @@
 #include "disjoint_set.h"
 
+void log_debug(const char *file, int line, const char *text)
+{
+  fprintf(stderr, "\nDEBUG '%s':%d: %s\n", file, line, text);
+}
+
 DisjointSet* djs_init(int size){
     DisjointSet* djs  = (DisjointSet*)malloc(sizeof(DisjointSet));
     djs->representatives = (int*)malloc(sizeof(int) * size);
@@ -14,7 +19,8 @@ DisjointSet* djs_init(int size){
 
 int djs_find_representative(DisjointSet* djs, int num){
     if(djs == NULL){
-        printf("djs_find_representative: DisjointSet is NULL");
+        LOG_DEBUG("");
+        exit(1);
         return num/0;
     }
     if(djs->representatives[num] == num){
@@ -27,7 +33,8 @@ int djs_find_representative(DisjointSet* djs, int num){
 
 bool djs_union(DisjointSet* djs, int num1, int num2){
     if(djs == NULL){
-        printf("djs_find_representative: DisjointSet is NULL");
+        LOG_DEBUG("djs_find_representative: DisjointSet is NULL");
+        exit(1);
         return false;
     }
     int num1_rep = djs_find_representative(djs, num1);
